@@ -5,7 +5,7 @@ namespace ClubeDaLeitura
     internal class Program
     {
         public static ControladorDeCaixas controladorCaixas = new();
-        public static ControladorRevistas controladorRevistas = new();
+        public static ControladorRevistas controladorRevistas = new(controladorCaixas);
         public static ControladorAmigos controladorAmigos = new();
         public static Emprestimo[] emprestimos = new Emprestimo[100];
         public static int numeroEmprestimos = 0;
@@ -203,5 +203,6 @@ namespace ClubeDaLeitura
                 }
             }
         }
+
     }
 }

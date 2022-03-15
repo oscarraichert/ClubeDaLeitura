@@ -35,7 +35,7 @@
             caixas[2] = new Caixa(cor, etiqueta, numero);
 
             cor = "Preta";
-            etiqueta = "Medieval";
+            etiqueta = "Fantasia";
             numero = "43628";
 
             caixas[3] = new Caixa(cor, etiqueta, numero);

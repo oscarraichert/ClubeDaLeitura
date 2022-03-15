@@ -20,8 +20,8 @@
         {
             return $"\nNome: {Nome}" +
                 $"\nNome do responsável: {NomeResponsavel}" +
-                $"\nEndereço: {Endereco}" +
-                $"\nTelefone: {Telefone}";
+                $"\nTelefone: {Telefone}" +
+                $"\nEndereço: {Endereco}";
         }
     }
 }

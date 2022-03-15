@@ -1,4 +1,6 @@
-﻿namespace ClubeDaLeitura
+﻿using System;
+
+namespace ClubeDaLeitura
 {
     public class ControladorAmigos
     {
