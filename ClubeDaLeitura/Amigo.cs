@@ -7,6 +7,7 @@
         public string Telefone;
         public string Endereco;
         public Revista Revista;
+        public Multa Multa;
 
         public Amigo(string nome, string nomeResponsavel, string telefone, string endereco)
         {

@@ -1,18 +1,20 @@
-﻿namespace ClubeDaLeitura
+﻿using System;
+
+namespace ClubeDaLeitura
 {
     public class Emprestimo
     {
         public Amigo Amigo;
         public Revista Revista;
-        public string DataEmprestimo;
-        public string DataDevolucao;
+        public DateTime DataEmprestimo;
+        public DateTime DataDevolucao;
 
-        public Emprestimo(Amigo amigo, Revista revista, string dataEmprestimo, string dataDevolucao)
+        public Emprestimo(Amigo amigo, Revista revista)
         {
             Amigo = amigo;
             Revista = revista;
-            DataEmprestimo = dataEmprestimo;
-            DataDevolucao = dataDevolucao;
+            DataEmprestimo = DateTime.Now;
+            DataDevolucao = DataEmprestimo.AddDays(Revista.Categoria.DiasEmprestimo);
         }
 
         public override string ToString()
