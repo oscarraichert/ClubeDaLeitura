@@ -6,6 +6,7 @@
         public string NomeResponsavel;
         public string Telefone;
         public string Endereco;
+        public bool EstaComRevista;
         public Revista Revista;
         public Multa Multa;
 
@@ -15,6 +16,7 @@
             NomeResponsavel = nomeResponsavel;
             Telefone = telefone;
             Endereco = endereco;
+            EstaComRevista = false;
         }
 
         public override string ToString()

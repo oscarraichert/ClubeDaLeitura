@@ -208,20 +208,20 @@ namespace ClubeDaLeitura
             Console.WriteLine("Amigo que está pegando o livro: \n");
             MostrarAmigos();
             int indice = Convert.ToInt32(Console.ReadLine()) - 1;
-
-            Amigo amigo = controladorAmigos.amigos[indice];
             
-            if (amigo.Revista != null)
+            if (controladorAmigos.amigos[indice].EstaComRevista == true)
             {
-                Console.WriteLine($"{amigo.Nome} já está com uma revista!");
+                Console.WriteLine($"{controladorAmigos.amigos[indice].Nome} já está com uma revista!");
                 return;
             }
 
-            if (amigo.Multa != null)
+            if (controladorAmigos.amigos[indice].Multa != null)
             {
                 Console.WriteLine("Não pode fazer empréstimo com multa em aberto!");
                 return;
             }
+            
+            Amigo amigo = controladorAmigos.amigos[indice];
 
             Console.WriteLine("Revista que está sendo emprestada: \n");
             MostrarRevistas();
@@ -243,6 +243,8 @@ namespace ClubeDaLeitura
             }
 
             revista.Emprestada = true;
+
+            controladorAmigos.amigos[indice].EstaComRevista = true;
 
             Emprestimo emprestimo = new Emprestimo(amigo, revista);
             emprestimos[numeroEmprestimos++] = emprestimo;
@@ -371,7 +373,9 @@ namespace ClubeDaLeitura
                 Multa(emprestimo);
             }
 
-            emprestimo.Revista.Emprestada = false;
+            controladorAmigos.amigos[numeroEmprestimo].EstaComRevista = false;
+
+            emprestimos[numeroEmprestimo] = null;
         }
 
         public static void MostrarMultas()
